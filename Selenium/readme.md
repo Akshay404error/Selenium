@@ -79,10 +79,10 @@ This repository contains comprehensive Python scripts for web automation, web sc
 ## 🚀 Quick Start
 
 ### Easy Launcher (Recommended)
-The easiest way to run any script is using the launcher:
+The easiest way to run any script is using the script launcher:
 
 ```bash
-python launcher.py
+python run_scripts.py
 ```
 
 This will show you a menu where you can select which script to run:
@@ -94,13 +94,13 @@ This will show you a menu where you can select which script to run:
 
 ## 📁 Scripts Overview
 
-### 0. Launcher Script (`launcher.py`)
+### 0. Script Launcher (`run_scripts.py`)
 
 **Purpose:** Easy menu-driven interface to run any script.
 
 **Usage:**
 ```bash
-python launcher.py
+python run_scripts.py
 ```
 
 ### 1. Web Automation Script (`web_automation.py`)
@@ -329,9 +329,9 @@ The most common error on Windows is: `[WinError 193] %1 is not a valid Win32 app
    ```
    This works without Chrome driver issues.
 
-2. **Use the Launcher:**
+2. **Use the Script Launcher:**
    ```bash
-   python launcher.py
+   python run_scripts.py
    ```
    Select "Simple Web Tools" from the menu.
 
