@@ -270,6 +270,32 @@ reporter.generate_html_report()
 
 ## 🛠️ Troubleshooting
 
+### Common Windows Issues
+
+The most common error on Windows is: `[WinError 193] %1 is not a valid Win32 application`
+
+**Quick Solutions:**
+
+1. **Use Simple Web Tools (Recommended):**
+   ```bash
+   python simple_web_tools.py
+   ```
+   This works without Chrome driver issues.
+
+2. **Test Your Setup:**
+   ```bash
+   python test_setup.py
+   ```
+
+3. **Use Windows-Specific Script:**
+   ```bash
+   python web_automation_windows.py
+   ```
+
+### Detailed Troubleshooting
+
+For comprehensive troubleshooting, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+
 ### Common Issues
 
 1. **ChromeDriver not found:**

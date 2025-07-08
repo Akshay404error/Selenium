@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://www.google.com",
+    "status_code": 200,
+    "response_time": 0.42,
+    "accessible": true,
+    "content_length": 168980
+  },
+  {
+    "url": "https://www.python.org",
+    "status_code": 200,
+    "response_time": 0.03,
+    "accessible": true,
+    "content_length": 49895
+  },
+  {
+    "url": "https://httpbin.org/status/200",
+    "status_code": 200,
+    "response_time": 1.03,
+    "accessible": true,
+    "content_length": 0
+  },
+  {
+    "url": "https://httpbin.org/status/404",
+    "status_code": 404,
+    "response_time": 1.01,
+    "accessible": false,
+    "content_length": 0
+  },
+  {
+    "url": "https://httpbin.org/delay/2",
+    "status_code": 200,
+    "response_time": 2.27,
+    "accessible": true,
+    "content_length": 550
+  }
+]

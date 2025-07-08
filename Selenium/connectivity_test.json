@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://www.google.com",
+    "status_code": 200,
+    "response_time": 0.43,
+    "accessible": true,
+    "content_length": 170535
+  },
+  {
+    "url": "https://www.python.org",
+    "status_code": 200,
+    "response_time": 0.01,
+    "accessible": true,
+    "content_length": 49895
+  },
+  {
+    "url": "https://httpbin.org/get",
+    "status_code": 200,
+    "response_time": 1.23,
+    "accessible": true,
+    "content_length": 483
+  },
+  {
+    "url": "https://www.github.com",
+    "status_code": 200,
+    "response_time": 0.49,
+    "accessible": true,
+    "content_length": 287080
+  }
+]

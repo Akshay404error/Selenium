@@ -18,6 +18,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import os
+import sys
 from datetime import datetime
 
 class WebAutomation:
@@ -26,19 +27,45 @@ class WebAutomation:
         self.chrome_options = Options()
         if headless:
             self.chrome_options.add_argument("--headless")
+        
+        # Windows-specific options
         self.chrome_options.add_argument("--no-sandbox")
         self.chrome_options.add_argument("--disable-dev-shm-usage")
         self.chrome_options.add_argument("--disable-gpu")
         self.chrome_options.add_argument("--window-size=1920,1080")
+        self.chrome_options.add_argument("--disable-extensions")
+        self.chrome_options.add_argument("--disable-plugins")
+        self.chrome_options.add_argument("--disable-images")
+        self.chrome_options.add_argument("--disable-javascript")  # Only if needed
+        self.chrome_options.add_argument("--remote-debugging-port=9222")
         
-        # Initialize driver with automatic ChromeDriver management
-        service = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=service, options=self.chrome_options)
-        self.wait = WebDriverWait(self.driver, 10)
+        # Add user agent to avoid detection
+        self.chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+        
+        try:
+            # Initialize driver with automatic ChromeDriver management
+            print("Setting up Chrome driver...")
+            service = Service(ChromeDriverManager().install())
+            self.driver = webdriver.Chrome(service=service, options=self.chrome_options)
+            self.wait = WebDriverWait(self.driver, 10)
+            print("Chrome driver initialized successfully!")
+        except Exception as e:
+            print(f"Error initializing Chrome driver: {e}")
+            print("Trying alternative approach...")
+            try:
+                # Alternative approach without webdriver-manager
+                self.driver = webdriver.Chrome(options=self.chrome_options)
+                self.wait = WebDriverWait(self.driver, 10)
+                print("Chrome driver initialized with alternative approach!")
+            except Exception as e2:
+                print(f"Failed to initialize Chrome driver: {e2}")
+                print("Please make sure Chrome browser is installed and up to date.")
+                raise
         
     def navigate_to_website(self, url):
         """Navigate to a specific website"""
         try:
+            print(f"Navigating to: {url}")
             self.driver.get(url)
             print(f"Successfully navigated to: {url}")
             return True
@@ -140,18 +167,20 @@ class WebAutomation:
 
 def main():
     """Main function demonstrating web automation"""
-    automation = WebAutomation(headless=False)
+    print("Starting Web Automation Demo...")
     
     try:
+        automation = WebAutomation(headless=False)
+        
         # Example 1: Google Search Automation
-        print("=== Google Search Automation ===")
+        print("\n=== Google Search Automation ===")
         automation.navigate_to_website("https://www.google.com")
         
         # Accept cookies if present
         try:
             automation.click_element(By.XPATH, "//button[contains(text(), 'Accept all')]")
         except:
-            pass
+            print("No cookie consent found or already accepted")
         
         # Perform search
         search_box = automation.wait_for_element(By.NAME, "q")
@@ -203,9 +232,14 @@ def main():
         
     except Exception as e:
         print(f"An error occurred: {e}")
+        print("This might be due to Chrome browser issues or network connectivity.")
     
     finally:
-        automation.close()
+        try:
+            automation.close()
+        except:
+            pass
+        print("Web automation demo completed.")
 
 if __name__ == "__main__":
     main() 
