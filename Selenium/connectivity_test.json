@@ -2,28 +2,28 @@
   {
     "url": "https://www.google.com",
     "status_code": 200,
-    "response_time": 0.43,
+    "response_time": 0.67,
     "accessible": true,
-    "content_length": 170535
+    "content_length": 32417
   },
   {
     "url": "https://www.python.org",
     "status_code": 200,
-    "response_time": 0.01,
+    "response_time": 0.04,
     "accessible": true,
-    "content_length": 49895
+    "content_length": 50101
   },
   {
     "url": "https://httpbin.org/get",
     "status_code": 200,
-    "response_time": 1.23,
+    "response_time": 1.02,
     "accessible": true,
-    "content_length": 483
+    "content_length": 535
   },
   {
     "url": "https://www.github.com",
     "status_code": 200,
-    "response_time": 0.49,
+    "response_time": 0.6,
     "accessible": true,
     "content_length": 287080
   }

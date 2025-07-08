@@ -76,7 +76,32 @@ This repository contains comprehensive Python scripts for web automation, web sc
    python -c "import selenium; print('Selenium installed successfully')"
    ```
 
+## 🚀 Quick Start
+
+### Easy Launcher (Recommended)
+The easiest way to run any script is using the launcher:
+
+```bash
+python launcher.py
+```
+
+This will show you a menu where you can select which script to run:
+- Web Automation
+- Web Scraping  
+- Bot Creation
+- Web Testing
+- Simple Web Tools (no Chrome driver needed)
+
 ## 📁 Scripts Overview
+
+### 0. Launcher Script (`launcher.py`)
+
+**Purpose:** Easy menu-driven interface to run any script.
+
+**Usage:**
+```bash
+python launcher.py
+```
 
 ### 1. Web Automation Script (`web_automation.py`)
 
@@ -270,6 +295,28 @@ reporter.generate_html_report()
 
 ## 🛠️ Troubleshooting
 
+### Quick Diagnostic Tools
+
+If you encounter any issues, use these diagnostic tools:
+
+1. **Run Diagnostics:**
+   ```bash
+   python diagnostic.py
+   ```
+   This will check your environment and identify issues.
+
+2. **Auto-Fix Common Issues:**
+   ```bash
+   python fix_environment.py
+   ```
+   This will attempt to fix common setup problems.
+
+3. **Test Your Setup:**
+   ```bash
+   python test_setup.py
+   ```
+   This will verify everything is working.
+
 ### Common Windows Issues
 
 The most common error on Windows is: `[WinError 193] %1 is not a valid Win32 application`
@@ -282,10 +329,11 @@ The most common error on Windows is: `[WinError 193] %1 is not a valid Win32 app
    ```
    This works without Chrome driver issues.
 
-2. **Test Your Setup:**
+2. **Use the Launcher:**
    ```bash
-   python test_setup.py
+   python launcher.py
    ```
+   Select "Simple Web Tools" from the menu.
 
 3. **Use Windows-Specific Script:**
    ```bash
